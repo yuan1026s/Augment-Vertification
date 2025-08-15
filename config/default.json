@@ -1,0 +1,22 @@
+{
+  "imap": {
+    "host": "imap.qq.com",
+    "port": 993,
+    "secure": true,
+    "user": "405133232@qq.com",
+    "password": "lxakeapbooxybhej",
+    "tls": true,
+    "tlsOptions": {
+      "rejectUnauthorized": false
+    }
+  },
+  "server": {
+    "port": 3000,
+    "host": "localhost"
+  },
+  "verification": {
+    "maxAge": 300000,
+    "cleanupInterval": 60000,
+    "maxCodes": 100
+  }
+}

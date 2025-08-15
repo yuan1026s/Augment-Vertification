@@ -1,0 +1,32 @@
+{
+  "name": "verification-code-site",
+  "version": "1.0.0",
+  "description": "自动接收验证码的网站，支持@yglzr.cloud个人域名邮箱和IMAP邮箱",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "verification-code",
+    "imap",
+    "email",
+    "automation",
+    "qq-mail"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "imap": "^0.8.19",
+    "mailparser": "^3.6.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

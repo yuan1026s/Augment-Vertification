@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码接收器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📧</text></svg>">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="icon">📧</span>
+                    验证码接收器
+                </h1>
+                <p class="subtitle">自动接收 @yglzr.cloud 域名邮箱验证码</p>
+                <div class="status-indicator">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span class="status-text" id="statusText">连接中...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 搜索区域 -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-input-container">
+                    <input type="text" id="searchInput" placeholder="请输入收件人邮箱地址..." class="search-input">
+                    <button id="searchBtn" class="search-btn">🔍 搜索</button>
+                    <button id="clearBtn" class="clear-btn">✖ 清空</button>
+                </div>
+
+                <div class="search-options">
+                    <label class="notification-setting">
+                        <input type="checkbox" id="notifyAllCodes" />
+                        <span class="checkmark"></span>
+                        接收所有验证码通知（默认只通知搜索的收件人）
+                    </label>
+                </div>
+
+                <div class="search-tips">
+                    <p id="searchTip">💡 输入收件人邮箱地址，如：user@example.com</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 验证码列表 -->
+        <section class="codes-section">
+            <div class="section-header">
+                <h2>验证码列表</h2>
+                <div class="section-actions">
+                    <button id="refreshBtn" class="action-btn">🔄 刷新</button>
+                </div>
+            </div>
+
+            <div class="codes-container" id="codesContainer">
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>加载中...</p>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">📭</div>
+                <h3>暂无验证码</h3>
+                <p>等待接收新的验证码邮件...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 通知容器 -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- 验证码详情模态框 -->
+    <div class="modal" id="codeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>验证码详情</h3>
+                <button class="modal-close" id="modalClose">✖</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
